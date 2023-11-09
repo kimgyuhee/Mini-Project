@@ -6,39 +6,58 @@ const progressText = document.getElementById('progressText');
 const scoreText = document.getElementById('score');
 const progressBarFull = document.getElementById('progressBarFull');
 
+const game = document.getElementById("game");
 let currentQuestion = {};
 let acceptingAnswers = false ;
 let score = 0;
 let questionCounter = 0;
 let availableQuestions = [];
 
-let questions = [
-    {
-        question : "김구이가 가장 좋아하는 베스킨라빈스 메뉴는 ?",
-        choice1 : "아몬드 봉봉",
-        choice2 : "그린티",
-        choice3 : "파핑파핑 바나나",
-        choice4 : "바람과 함께 사라지다",
-        answer : 3
-    },
-    {
-        question : "김구이가 최근에 자주 먹는 과자는 ?",
-        choice1 : "새우깡",
-        choice2 : "바나나킥",
-        choice3 : "꼬깔콘",
-        choice4 : "홈런볼",
-        answer : 1
-    },
-    {
-        question : "김구이가 최근에 빠진 과일는 ?",
-        choice1 : "사과",
-        choice2 : "감",
-        choice3 : "블루베리",
-        choice4 : "복숭아",
-        answer : 2
-    }
-]
+let questions = [];
 
+// CASE2. Fetch API to Load Questions from Open Trivia DB API
+fetch(
+    "https://opentdb.com/api.php?amount=10&category=9&difficulty=easy&type=multiple"
+).then(res => {
+    return res.json();
+}).then(loadedQuestions => {
+    questions = loadedQuestions.results.map(loadedQuestion => {
+        const formattedQuestion = {
+            question: loadedQuestion.question
+        };
+
+        const answerChoices = [ ...loadedQuestion.incorrect_answers];
+        formattedQuestion.answer = Math.floor(Math.random() * 3) + 1;
+        answerChoices.splice(
+            formattedQuestion.answer -1,
+            0,
+            loadedQuestion.correct_answer
+        );
+        
+        answerChoices.forEach((choice, index) => {
+            formattedQuestion["choice"+ (index+1)] = choice;
+        });
+
+        return formattedQuestion;
+    });
+    startGame();
+})
+
+// CASE1. Fetch API to Load Questions from Local JSON File
+/* 
+fetch("questions.json")
+    .then(res => {
+        return res.json();
+    })
+    .then(loadedQuestions => {
+        console.log(loadedQuestions)
+        questions = loadedQuestions;
+        startGame();
+    })
+    .catch(err => {
+        console.error(err);
+    });
+*/
 // CONSTANTS
 
 const CORRECT_BOUNS = 10;
@@ -48,13 +67,15 @@ startGame = () => {
     questionCounter = 0;
     score = 0;
     availableQuestions = [ ...questions];
-    console.log(availableQuestions);
+    console.log(availableQuestions)
     getNewQuestion();
+    game.classList.remove('hidden');
+    loader.classList.add("hidden");
 };
 
 getNewQuestion = () => {
     
-    if(availableQuestions.length == 0 || questionCounter > MAX_QUESTIONS) {
+    if(availableQuestions.length == 0 || questionCounter >= MAX_QUESTIONS) {
         localStorage.setItem('mostRecentScore', score);
         // go to the end page
         return window.location.assign("/end.html");
@@ -78,7 +99,7 @@ getNewQuestion = () => {
     });
 
     availableQuestions.splice(questionIndex, 1);
-
+    console.log(availableQuestions)
     acceptingAnswers = true;
 };
 
@@ -109,4 +130,4 @@ incrementScore = num => {
     scoreText.innerText = score;
 };
 
-startGame();
+// startGame();
