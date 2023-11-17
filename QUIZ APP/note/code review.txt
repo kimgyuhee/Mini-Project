@@ -1,0 +1,39 @@
+### HTML ###
+
+📝 id, class, name 속성 차이
+- id : 오직 하나의 id만 존재
+- class : 다중으로 존재
+- name : <input>태그에 존재하는 속성, 사용자에게 데이터를 입력받을 수 있는 태그
+
+
+📝 블록 요소, 인라인 요소
+- 블럭요소 : 하나의 태그가 브라우저에서 좌우공간을 다 차지하면서 독립적인 덩어리 공간을 가지는 요소들입니다.
+- 인라인요소 : 하나의 태그가 브라우저에서 실제로 코딩된 그 영역만 차지하여 좌우로 다른 태그가 나란히 위치할 수 있는 요소들입니다. 
+	행 안의 일부분이라고 보시면 됩니다. 텍스트레벨요소라고도 합니다.
+- 블럭요소 : <div>,<table>,<h1>~<h6>,<p>,<form>,<ul>,<ol>,<li>,<dl>,<dt>,<dd>,<pre>,<blockquote>등
+- 인라인요소 : <span>,<a>,<br>,<em>,<strong>,<input>,<label>,<img>
+
+
+📝 input 태그에 입력 못하게 하기
+- readonly와 disabled의 속성
+- 간단하게 disabled는 값을 전달하지 못합니다. 당연히 반대로 readonly는 값을 전달할 수 있습니다.
+
+
+📝 input 태그에 무조건 입력 값 존재하게 하기
+- required 속성을 이용
+- <input type = "text" required>
+
+📝 radio button (라디오 버튼) 하나만 선택 되게 하기
+- 다중으로 선택을 할 때는 check box (체크 박스)를 input type으로 생성
+- 하나의 선택을 할 때는 radio (라디오)를 input type으로 생성
+- 다중 선택이 이루어지면 안 되는데요. 이럴 때 사용하실 수 있으신 게 바로 name 속성
+
+📝 Select 태그 알아보기
+select 태그에서 또 다른 태그가 안에 존재합니다. 바로 optgroup
+
+
+### CSS ###
+
+
+
+### JavaScript ###
