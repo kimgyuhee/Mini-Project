@@ -1,0 +1,172 @@
+☁️ AR?
+가상의 이미지 또는 물체를 실제 공간에 위치시켜 해당 이미지 또는 물체가 실제로 존재하는 것처럼 실제 세계와 상호작용할 수 있도록 하는 기술
+
+🗣 iOS에서 AR 컨텐츠를 만들 수 있을까? 
+💬 만들 수 있습니다 ! 그렇다면 프로젝트 세팅부터 해볼까요?
+
+보통은 프로젝트의 template으로 App을 설정했었는데요,
+
+📲 AR 컨텐츠를 만들기 위해서는 'Argumented Reality App' 을 선택해주어야 합니다.
+
+Argumented Reality App을 선택하면 제공되는 Content Technology로는 RealityKit, SceneKit, SpriteKit, Metal 4가지가 있습니다. 이 중에 어떤 것을 Content Technology로 선택해야 할지 감이 잘 오지 않는데요,
+이제부터 RealityKit, SceneKit, SpriteKit, Metal을 사용하면 각각 어떤 컨텐츠를 만들 수 있게 되는지에 대해 알아봅시다!
+
+
+🟩 Metal
+
+- Metal은 렌더링 기술이 아니라 풍부한 셰이딩 언어를 사용할 수 있는 GPU 가속기이다.
+- 2014년에 출시되었으며 저수준 프레임워크이다.
+- Metal은 RealityKit, SceneKit, ARKit, CoreML, Vision, AVFoundation 등 모든 곳에서 구현된다.
+- Metal은 단 하나의 API로 OpenGL 및 OpenCL과 유사한 기능을 결합한다.
+
+[📄 Metal 공식문서]
+
+Metal은 그래픽과 컴퓨팅 프로그램 간의 긴밀한 통합이 이루어진 환경에서 풍부한 셰이딩 언어를 사용하여 최신 3D 응용 프로그램과 뛰어난 성능의 게임을 개발할 수 있도록 플랫폼에 최적화되어 있고 오버헤드가 낮은 API를 제공합니다. Metal에는 더욱 복잡해진 셰이더 코드를 관리하면서 더 많은 작업을 수행할 수 있게 해 주는 독보적인 수준의 고급 GPU 디버깅 도구 모음이 추가되어 그래픽 코드의 잠재력을 최대한 발휘할 수 있습니다.
+
+Metal은 SceneKit 또는 RealityKit이 렌더링할 수 있는 것보다 훨씬 많은 수의 다각형 또는 3D 입자를 렌더링할 때 빛나기 시작합니다. Metal 프레임워크를 사용하여 정교한 3D 환경의 게임, Final Cut Pro 및 Nuke와 같은 비디오 처리 앱, Maya와 같은 3D 앱 또는 과학을 위해 수행해야 하는 빅 데이터 과학 앱을 위한 고품질 GPU 렌더링을 생성할 수 있습니다.
+
+
+🔳 SpriteKit
+
+*제공 언어 : Objective-C, Swift
+
+SpriteKit은 2D 게임 및 2D 그래픽을 만들고 렌더링하기 위한 Apple 노드 기반 프레임워크.
+2013년에 출시되었으며 SpriteKit을 독립 실행시키거나, SceneKit 및 ARKit과 함께 사용가능.
+
+SpriteKit은 모양, 입자, 텍스트, 이미지 및 비디오를 2차원으로 그리기 위한 범용 프레임워크로서 Metal을 활용하여 고성능 렌더링을 구현하는 동시에 간단한 프로그래밍 인터페이스를 제공하여 게임 및 기타 그래픽 집약적인 앱을 쉽게 만들 수 있게 한다.
+풍부한 애니메이션 및 물리 동작을 사용하여 시각적 요소에 빠르게 생명을 불어넣고 화면 간 우아한 전환이 가능하다.
+
+💡 따라서 2D 게임을 만들거나 2D 그래픽을 만들기 위해서는 SpriteKit을 사용하면 됩니다!
+
+🍎 SpriteKit의 기본 클래스
+
+// 모든 활성 SpriteKit 콘텐츠를 구성하는 개체입니다.
+class SKScene
+
+// SpriteKit 장면을 렌더링하는 뷰 하위 클래스입니다.
+class SKView
+
+
+[📄 SpriteKit 공식문서]
+
+'SpriteKit 프레임워크를 사용하면 고성능의 배터리 효율적인 2D 게임을 쉽게 만들 수 있습니다. 사용자 정의 OpenGL ES 셰이더 및 조명 지원, SceneKit과의 통합, 고급 새 물리 효과 및 애니메이션을 통해 힘 필드를 추가하고 충돌을 감지하며 새 조명 효과를 생성할 수 있습니다.'
+주로 2D 게임을 만들 때 사용하거나 UIKit에서 애니메이션 만들 때 유용하게 사용한다고 합니다.
+
+
+
+🟥 SceneKit
+
+- SceneKit은 앱에서 3D 애니메이션 장면과 효과를 만드는 데 도움이 되는 고급 3D 그래픽 프레임워크이다.
+- SceneKit은 높은 수준의 프레임워크로,  2012년에 출시되었으며 Apple의 렌더링 기술 제품군에서 가장 오래된 것이다.
+- SceneKit은 처음에 VR용으로 고안되었으며, AR 프로젝트의 경우 ARKit과 함께만 사용할 수 있다. 
+
+- SceneKit에서 주요 장치는 자체 계층을 가지고 조명(SCNLight), 카메라(SCNCamera), 기하학(SCNGeometry), 입자 시스템(SCNParticle System), 오디오 플레이어(SCNAudioPlayer)를 저장할 수 있는 노드(SCNNode 클래스)이다.
+
+💡 SceneKit은 노드를 사용하여 장면의 구조를 정의한다.
+
+🚨 아직까지 3D 그래픽 장면과 효과를 만드는데 사용가능한 유용하고 매우 훌륭한 프레임워크지만, 2017년 이후 업데이트가 되지 않고 애플이 현재 밀고 있는 RealityKit으로 대체될 수 있는 부분들이 많기에 향후에는 사용되지 않을 가능성이 있다고 합니다. (아직까지 참고할 수 있는 코드는 SceneKit이 훨씬 많답니다 ,,,,)
+
+
+🍎 SceneKit의 기본 클래스
+
+// 함께 표시 가능한 3D 장면을 형성하는 노드 계층 및 전역 속성에 대한 컨테이너입니다.
+class SCNScene
+
+// 3D SceneKit 콘텐츠를 표시하기 위한 보기입니다.
+class SCNView
+
+// 형상, 조명, 카메라 또는 기타 표시 가능한 콘텐츠를 부착할 수 있는 
+// 3D 좌표 공간의 위치 및 변환을 나타내는 장면 그래프의 구조적 요소입니다.
+class SCNNode
+
+[📄 SceneKit 공식문서]
+
+SceneKit은 앱에서 3D 애니메이션 장면과 효과를 만드는 데 도움이 되는 고급 3D 그래픽 프레임워크입니다. 여기에는 물리 엔진, 입자 생성기 및 3D 개체의 동작을 스크립팅하는 쉬운 방법이 통합되어 있으므로 장면을 지오메트리, 재질, 조명 및 카메라와 같은 내용으로 설명한 다음 해당 개체의 변경 사항을 설명하여 애니메이션을 만들 수 있습니다.
+
+
+
+🟨 RealityKit
+
+RealityKit은 AR앱에서 사용할 3D 콘텐츠를 시뮬레이션하고 렌더링한다.
+
+- Apple의 렌더링 제품 기술군에서 가장 최신에 나온 SDK로, 2019년에 출시된 고급 프레임워크이다. 다중 스레드 렌더링을 수행한다.
+- RealityKit은 Objective-C 레거시가 없으며 RealityKit은 Swift만 지원한다. 
+- RealityKit의 주요 장점은 Reality Composer 앱에서 오는 장면을 보완/변경/사용자 정의할 수 있으며 ARKit의 강력한 확장이 될 수 있고 독립 실행형 AR SDK로서도 유용하다.
+
+
+RealityKit에서 주요 단위는 components와 ModelEntity와 같은 리소스로 만들 수 있는 엔티티(ModelEntity, AnchorEntity, TriggerVolume, BodyTrackedEntity, PointLight, SpotLight, DirectionalLight 및 PerspectiveCamera)입니다.
+
+RealityKit은 고품질 렌더 기술과 최신 AR 기능을 즉시 제공합니다. LiDAR 스캐너를 지원하며 UIKit 스토리보드 또는 SwiftUI 인터페이스와 함께 작동합니다. 
+
+* 제공 언어 : Swift
+
+🍎 RealityKit의 기본 클래스
+// RealityKit의 콘텐츠를 통합하는 증강 현실 경험을 표시하는 기본 View 입니다.
+class ARView
+ 
+
+🍎 RealityKit의 엔티티 구성 요소 시스템
+
+// AR 보기에서 렌더링된 엔터티 컬렉션을 보유하는 컨테이너입니다.
+class Scene​
+
+// 엔터티의 모양 및 동작 특성을 제공하는 구성 요소를 연결하는 RealityKit 장면의 요소입니다.
+class Entity​
+
+// 엔티티에 적용하는 지오메트리 또는 동작의 표현입니다.
+protocol Component​
+
+// 재료, 메쉬 또는 텍스처와 같은 구성 요소를 구성하는 데 사용하는 공유 리소스입니다.
+protocol Resource​
+
+// RealityKit 장면의 모든 프레임에서 여러 개체에 영향을 주는 개체입니다.
+protocol System
+
+
+🌐 Reality Composer
+(RealityKit에서 AR 컨텐츠 보조 제작하는 도구)
+
+Reality Composer는 Xcode에 포함되어 있으며 iOS 및 iPadOS 앱으로도 제공되어 iPhone이나 iPad에서 AR 경험을 온전히 빌드, 테스트, 조정 및 시뮬레이션할 수 있습니다.
+또한 라이브 링크 지원 기능을 통해 여러 플랫폼 간에 신속하게 이동하여 개발자용으로 최적화된 기기에서 멋지고 복합적인 AR 경험을 제작할 수 있습니다.
+
+
+[📄 RealityKit 공식문서]
+
+RealityKit 프레임워크를 사용하여 고성능 3D 시뮬레이션 및 렌더링을 구현합니다. RealityKit은 ARKit 프레임워크에서 제공하는 정보를 활용 하여 가상 객체를 현실 세계에 매끄럽게 통합합니다.
+
+
+RealityKit의 풍부한 기능을 사용하여 매력적인 증강 현실(AR) 경험을 만드십시오.
+
+- Reality Composer 앱으로 만든 정교한 컴포지션을 포함하여 완전히 형성된 자산을 가져오거나 메시, 재료 및 텍스처에서 빌드하십시오.
+- 환경에 오디오 소스를 배치합니다.
+- 수동 및 물리 시뮬레이션을 통해 개체를 애니메이션합니다.
+- 사용자 입력 및 환경 변화에 대응합니다.
+- 장치 간에 동기화하여 그룹 AR 경험을 가능하게 합니다.
+
+
+
+참고 블로그 : https://borabong.tistory.com/16
+
+
+
+
+
+https://www.inflearn.com/course/lecture?courseSlug=%EC%8A%A4%EC%9C%84%ED%94%84%ED%8A%B8-ios-%EA%B2%8C%EC%9E%84%EA%B0%9C%EB%B0%9C&unitId=22634&tab=curriculum
+
+
+SpriteKit이란
+- iOS에 최적화, Metal API를 지원하여 빠른 속도
+- iOS의 라이브러리를 자유롭게 가져다가 쓸 수 있다.
+- 고수준 언어인 Swift로 코딩가능
+- 간단한 2D게임을 빠르게 개발
+- Swift에 대한 학습도 수행불가
+- Apple 생태계밖에서는 사용불가
+
+
+SpriteKit의 구조
+- 일반 앱과는 달리 하나의 뷰 컨트롤러
+- 뷰컨트롤러 위에서 미리 준비되어 있는 씬을 바꿈으로써 화면을 전환
+
+
+
+
