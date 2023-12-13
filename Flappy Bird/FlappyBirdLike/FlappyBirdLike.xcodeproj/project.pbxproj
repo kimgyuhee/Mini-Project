@@ -27,6 +27,7 @@
 		9E8341B62B196975004A9FD2 /* rain.sks in Resources */ = {isa = PBXBuildFile; fileRef = 9E8341B42B196975004A9FD2 /* rain.sks */; };
 		9E8341B72B196975004A9FD2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9E8341B52B196975004A9FD2 /* Assets.xcassets */; };
 		9E8341B92B1969BC004A9FD2 /* thruster.sks in Resources */ = {isa = PBXBuildFile; fileRef = 9E8341B82B1969BC004A9FD2 /* thruster.sks */; };
+		9E8341BB2B1984DE004A9FD2 /* MenuScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E8341BA2B1984DE004A9FD2 /* MenuScene.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -52,6 +53,7 @@
 		9E8341B42B196975004A9FD2 /* rain.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = rain.sks; sourceTree = "<group>"; };
 		9E8341B52B196975004A9FD2 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		9E8341B82B1969BC004A9FD2 /* thruster.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = thruster.sks; sourceTree = "<group>"; };
+		9E8341BA2B1984DE004A9FD2 /* MenuScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuScene.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -85,13 +87,11 @@
 		9E2EF86E2B073D85002C88E9 /* FlappyBirdLike */ = {
 			isa = PBXGroup;
 			children = (
-				9E8341B82B1969BC004A9FD2 /* thruster.sks */,
-				9E8341B42B196975004A9FD2 /* rain.sks */,
+				9E8341BD2B19899A004A9FD2 /* Scenes */,
 				9E8341A52B1867E9004A9FD2 /* Info.plist */,
 				9E2EF86F2B073D85002C88E9 /* AppDelegate.swift */,
 				9E2EF8712B073D85002C88E9 /* GameScene.sks */,
 				9E2EF8732B073D85002C88E9 /* Actions.sks */,
-				9E2EF8752B073D85002C88E9 /* GameScene.swift */,
 				9E2EF8772B073D85002C88E9 /* GameViewController.swift */,
 				9E2EF8792B073D85002C88E9 /* Main.storyboard */,
 				9E2EF8862B074234002C88E9 /* Images.xcassets */,
@@ -99,6 +99,7 @@
 				9E8341A02B175C5C004A9FD2 /* ActionList.sks */,
 				9E8341A22B178FBD004A9FD2 /* Constants.swift */,
 				9E8341A42B1866A7004A9FD2 /* Minercraftory.ttf */,
+				9E8341BC2B198557004A9FD2 /* Particles */,
 				9E8341B32B196391004A9FD2 /* Sounds */,
 			);
 			path = FlappyBirdLike;
@@ -115,6 +116,24 @@
 				9E8341A72B196382004A9FD2 /* sfxWing.mp3 */,
 			);
 			path = Sounds;
+			sourceTree = "<group>";
+		};
+		9E8341BC2B198557004A9FD2 /* Particles */ = {
+			isa = PBXGroup;
+			children = (
+				9E8341B82B1969BC004A9FD2 /* thruster.sks */,
+				9E8341B42B196975004A9FD2 /* rain.sks */,
+			);
+			path = Particles;
+			sourceTree = "<group>";
+		};
+		9E8341BD2B19899A004A9FD2 /* Scenes */ = {
+			isa = PBXGroup;
+			children = (
+				9E8341BA2B1984DE004A9FD2 /* MenuScene.swift */,
+				9E2EF8752B073D85002C88E9 /* GameScene.swift */,
+			);
+			path = Scenes;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -204,6 +223,7 @@
 				9E2EF8762B073D85002C88E9 /* GameScene.swift in Sources */,
 				9E2EF8782B073D85002C88E9 /* GameViewController.swift in Sources */,
 				9E2EF8702B073D85002C88E9 /* AppDelegate.swift in Sources */,
+				9E8341BB2B1984DE004A9FD2 /* MenuScene.swift in Sources */,
 				9E8341A32B178FBD004A9FD2 /* Constants.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
